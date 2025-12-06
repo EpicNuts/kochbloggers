@@ -15,7 +15,9 @@ This is a German recipe and cooking website for the domain `kochbloggers.de`. Cu
 
 - `index.html`: Main page with semantic HTML5 structure, includes hero, recipes grid, about, contact
 - `styles.css`: Complete styling with CSS custom properties, responsive breakpoints at 768px
-- `DEPLOYMENT.md`: Strato.de-specific deployment instructions and troubleshooting
+- `DEPLOYMENT.md`: Multi-platform deployment guide (Vercel, Strato.de, self-hosting)
+- `VERCEL_DEPLOYMENT.md`: Detailed Vercel setup guide for static site hosting
+- `SELF_HOSTING.md`: Complete Raspberry Pi self-hosting guide with Nginx, SSL, and security
 
 ## Development Patterns
 
@@ -26,10 +28,11 @@ This is a German recipe and cooking website for the domain `kochbloggers.de`. Cu
 
 ## Deployment Workflow
 
-- **Target platform**: Strato.de shared hosting
-- **Upload location**: `www/` or `public_html/` directory via FTP or file manager
-- **File permissions**: 644 for files, 755 for directories
-- **No build process**: Direct file upload, no compilation needed
+- **Recommended**: Vercel for zero-config static hosting with free tier
+- **Alternative**: Strato.de shared hosting via FTP upload to `www/` directory
+- **Advanced**: Self-hosted Raspberry Pi with Nginx and Let's Encrypt SSL
+- **File permissions**: 644 for files, 755 for directories (relevant for Strato/self-hosting)
+- **No build process**: Direct file deployment, no compilation needed
 
 ## Content Guidelines
 
