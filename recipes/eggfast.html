@@ -7,6 +7,8 @@
     <meta name="description" content="Proteinreiches und schnelles Eggfast-Rezept - perfekt für einen energievollen Start in den Tag">
     <link rel="icon" type="image/png" href="../logo.png">
     <link rel="stylesheet" href="../styles.css">
+    <script src="../assets/js/theme-switcher.js"></script>
+    <script src="../assets/js/recipe-scroll-parallax.js" defer></script>
 </head>
 <body>
     <header>
@@ -15,11 +17,36 @@
                 <img src="../logo.png" alt="Kochbloggers Logo" class="logo-img">
                 <h1><a href="../index.html">kochbloggers</a></h1>
             </div>
-            <ul class="nav-links">
-                <li><a href="../index.html#home">Start</a></li>
-                <li><a href="../index.html#recipes">Rezepte</a></li>
-                <li><a href="../index.html#contact">Kontakt</a></li>
-            </ul>
+            <div class="nav-actions">
+                <ul class="nav-links">
+                    <li><a href="../index.html#home">Start</a></li>
+                    <li class="nav-separator" aria-hidden="true">|</li>
+                    <li><a href="../index.html#recipes">Rezepte</a></li>
+                    <li class="nav-separator" aria-hidden="true">|</li>
+                    <li><a href="#contact">Kontakt</a></li>
+                    <li class="nav-separator" aria-hidden="true">|</li>
+                    <li class="theme-nav-item">
+                        <button
+                            id="theme-toggle"
+                            class="theme-trigger"
+                            type="button"
+                            aria-haspopup="menu"
+                            aria-expanded="false"
+                            aria-controls="theme-menu"
+                        >
+                            <span class="theme-trigger-icon" aria-hidden="true"></span>
+                            <span id="theme-current" class="theme-current">Kuestenwind</span>
+                            <span class="theme-trigger-caret" aria-hidden="true">▾</span>
+                        </button>
+                        <div id="theme-menu" class="theme-menu" role="menu" aria-label="Theme Auswahl">
+                            <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="kuestenwind">Kuestenwind</button>
+                            <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="herdfeuer">Herdfeuer</button>
+                            <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="nachtkueche">Nachtkueche</button>
+                            <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="marktmorgen">Marktmorgen</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -38,9 +65,9 @@
             </div>
             
             <div class="recipe-hero-image">
-                <img src="/assets/images/eggfast/hero.jpg" 
+                <img src="../assets/images/eggfast/hero.jpg" 
                      alt="Eggfast - fertiges Gericht" 
-                     onerror="this.src='https://via.placeholder.com/800x400/f39c12/ffffff?text=🥚+Eggfast'">
+                     onerror="this.src='../assets/images/custard-tarts.jpg'">
             </div>
         </div>
 
@@ -121,5 +148,6 @@
             <p>&copy; 2025 kochbloggers. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
+
 </body>
 </html>

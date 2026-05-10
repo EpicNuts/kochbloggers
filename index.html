@@ -9,6 +9,8 @@
     <link rel="shortcut icon" type="image/png" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
     <link rel="stylesheet" href="styles.css">
+    <script src="assets/js/theme-switcher.js"></script>
+    <script src="assets/js/recipe-card-parallax.js" defer></script>
 </head>
 <body>
     <header>
@@ -17,11 +19,36 @@
                 <img src="logo.png" alt="Kochbloggers Logo" class="logo-img">
                 <h1>kochbloggers</h1>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home">Start</a></li>
-                <li><a href="#recipes">Rezepte</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
+            <div class="nav-actions">
+                <ul class="nav-links">
+                    <li><a href="#home">Start</a></li>
+                    <li class="nav-separator" aria-hidden="true">|</li>
+                    <li><a href="#recipes">Rezepte</a></li>
+                    <li class="nav-separator" aria-hidden="true">|</li>
+                    <li><a href="#contact">Kontakt</a></li>
+                    <li class="nav-separator" aria-hidden="true">|</li>
+                    <li class="theme-nav-item">
+                        <button
+                            id="theme-toggle"
+                            class="theme-trigger"
+                            type="button"
+                            aria-haspopup="menu"
+                            aria-expanded="false"
+                            aria-controls="theme-menu"
+                        >
+                            <span class="theme-trigger-icon" aria-hidden="true"></span>
+                            <span id="theme-current" class="theme-current">Kuestenwind</span>
+                            <span class="theme-trigger-caret" aria-hidden="true">▾</span>
+                        </button>
+                        <div id="theme-menu" class="theme-menu" role="menu" aria-label="Theme Auswahl">
+                            <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="kuestenwind">Kuestenwind</button>
+                            <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="herdfeuer">Herdfeuer</button>
+                            <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="nachtkueche">Nachtkueche</button>
+                            <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="marktmorgen">Marktmorgen</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -63,15 +90,29 @@
                     </div>
                 </a>
                 
-                <!-- Placeholder für weitere Rezepte -->
+                <a href="recipes/carrot-cake.html" class="recipe-card-link">
+                    <div class="recipe-card">
+                        <div class="recipe-image">
+                            <img src="assets/images/carrot-cake/hero.jpg"
+                                 alt="Moehrenkuchen"
+                                   onerror="this.src='assets/images/custard-tarts.jpg'">
+                        </div>
+                        <div class="recipe-content">
+                            <h3>Moehrenkuchen</h3>
+                            <span class="cook-time">⏱️ 45 Min</span>
+                            <p>Saftiger Kuchen mit Moehren, Zimt und Frischkaese-Frosting - perfekt fuer Kaffeepause und Besuch.</p>
+                        </div>
+                    </div>
+                </a>
+
                 <div class="recipe-card coming-soon">
                     <div class="recipe-image">
-                        <img src="assets/images/custard-tarts.jpg" alt="Mehr Rezepte kommen bald">
+                        <img src="assets/images/chicken-banana-curry/1000143325.jpg" alt="Mehr Rezepte kommen bald">
                     </div>
                     <div class="recipe-content">
                         <h3>Mehr Rezepte kommen bald...</h3>
-                        <span class="cook-time">⏱️ ---</span>
-                        <p>Wir arbeiten an weiteren leckeren Rezepten für euch!</p>
+                        <span class="cook-time">⏱️ Bald da</span>
+                        <p>Wir arbeiten bereits an neuen Rezepten fuer euch. Schaut bald wieder vorbei.</p>
                     </div>
                 </div>
             </div>
@@ -85,5 +126,6 @@
             <p>&copy; 2025 kochbloggers. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
+
 </body>
 </html>
