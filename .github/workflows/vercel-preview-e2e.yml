@@ -49,6 +49,7 @@ jobs:
           set -euo pipefail
 
           TARGET_URL="${PREVIEW_TEST_URL}"
+          MAX_HOPS=8
 
           if [[ -z "${BYPASS_SECRET}" ]]; then
             echo "Missing GitHub secret VERCEL_AUTOMATION_BYPASS_SECRET."
@@ -56,25 +57,55 @@ jobs:
           fi
 
           echo "Checking preview access at: ${TARGET_URL}"
-          http_code=$(curl -sSL -o preview.html -w '%{http_code}' --max-redirs 10 \
-            -H "x-vercel-protection-bypass: ${BYPASS_SECRET}" \
-            -H "x-vercel-set-bypass-cookie: true" \
-            "${TARGET_URL}")
 
-          if [[ "${http_code}" != "200" ]]; then
+          for ((hop=1; hop<=MAX_HOPS; hop++)); do
+            http_code=$(curl -sS -o preview.html -D preview_headers.txt -w '%{http_code}' \
+              -H "x-vercel-protection-bypass: ${BYPASS_SECRET}" \
+              -H "x-vercel-set-bypass-cookie: true" \
+              "${TARGET_URL}")
+
+            if [[ "${http_code}" == "200" ]]; then
+              if grep -Eqi 'vercel.*protect|deployment.*protect|access denied|sign in|security checkpoint' preview.html; then
+                echo "Preview appears to be protected by Vercel or an auth wall (HTTP 200 protection page)."
+                sed -n '1,160p' preview.html || true
+                exit 1
+              fi
+              echo "Preview access check passed."
+              exit 0
+            fi
+
+            if [[ "${http_code}" =~ ^30[1278]$ ]]; then
+              location=$(awk 'BEGIN{IGNORECASE=1} /^location:/{sub(/\r$/, "", $2); print $2; exit}' preview_headers.txt)
+
+              if [[ -z "${location}" ]]; then
+                echo "Received redirect (HTTP ${http_code}) without Location header."
+                exit 1
+              fi
+
+              if [[ "${location}" == https://vercel.com/* || "${location}" == *"/sso-api"* ]]; then
+                echo "Redirected to Vercel authentication: ${location}"
+                echo "Bypass token was not accepted for this deployment protection setup."
+                exit 1
+              fi
+
+              if [[ "${location}" == /* ]]; then
+                TARGET_URL="https://$(echo "${TARGET_URL}" | awk -F/ '{print $3}')${location}"
+              else
+                TARGET_URL="${location}"
+              fi
+
+              echo "Following redirect ${hop}/${MAX_HOPS}: ${TARGET_URL}"
+              continue
+            fi
+
             echo "Preview returned HTTP ${http_code}."
-            echo "Common causes: Vercel deployment protection, an auth wall, or the deployment is not ready yet."
             echo "Response body preview:"
             sed -n '1,120p' preview.html || true
             exit 1
-          fi
+          done
 
-          if grep -Eqi 'vercel.*protect|deployment.*protect|access denied|sign in|security checkpoint' preview.html; then
-            echo "Preview appears to be protected by Vercel or an auth wall."
-            echo "Response body preview:"
-            sed -n '1,160p' preview.html || true
-            exit 1
-          fi
+          echo "Too many redirects while checking preview accessibility."
+          exit 1
 
       - name: Run E2E tests against Vercel Preview
         env:
