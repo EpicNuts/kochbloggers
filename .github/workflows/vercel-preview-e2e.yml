@@ -53,7 +53,7 @@ jobs:
           TARGET_URL="${PREVIEW_TEST_URL}"
 
           echo "Checking preview access at: ${TARGET_URL%\?*}"  # Print without secret
-          http_code=$(curl -sSL -o preview.html -w '%{http_code}' --max-redirs 5 "${TARGET_URL}")
+          http_code=$(curl -sSL -c /tmp/cookies.txt -b /tmp/cookies.txt -o preview.html -w '%{http_code}' --max-redirs 10 "${TARGET_URL}")
 
           if [[ "${http_code}" != "200" ]]; then
             echo "Preview returned HTTP ${http_code}."
