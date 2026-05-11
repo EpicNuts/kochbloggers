@@ -10,7 +10,7 @@
 :root,
 html[data-theme='kuestenwind'] {
     --header-offset: 80px;
-    --anchor-offset: 80px;
+    --anchor-offset: var(--header-offset);
     --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --font-heading: 'Fraunces', Georgia, serif;
 
@@ -920,12 +920,11 @@ footer,
     html[data-theme='nachtkueche'],
     html[data-theme='marktmorgen'] {
         --header-offset: 180px;
-        --anchor-offset: 180px;
     }
 
     :root {
         --header-offset: 180px;
-        --anchor-offset: 180px;
+        --anchor-offset: var(--header-offset);
     }
 
     .logo h1 {

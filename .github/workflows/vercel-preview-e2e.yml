@@ -1,0 +1,131 @@
+name: Vercel Preview E2E
+
+on:
+  deployment_status: {}
+  workflow_dispatch: {}
+
+jobs:
+  e2e-preview:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'deployment_status' &&
+      github.event.deployment_status.state == 'success' &&
+      github.event.deployment_status.environment_url != '' &&
+      contains(github.event.deployment.environment, 'Preview'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout deployment commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.deployment.sha || github.sha }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Show target preview URL
+        env:
+          PREVIEW_URL: ${{ github.event.deployment_status.environment_url }}
+          FALLBACK_URL: ${{ vars.PLAYWRIGHT_BASE_URL }}
+          BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
+        run: |
+          set -euo pipefail
+
+          TARGET_URL="${PREVIEW_URL:-$FALLBACK_URL}"
+
+          if [[ -z "${TARGET_URL}" ]]; then
+            echo "No preview URL available (deployment event URL and PLAYWRIGHT_BASE_URL are both empty)."
+            exit 1
+          fi
+
+          if [[ -z "${BYPASS_SECRET}" ]]; then
+            echo "Missing GitHub secret VERCEL_AUTOMATION_BYPASS_SECRET."
+            exit 1
+          fi
+
+          if [[ "${TARGET_URL}" == */ ]]; then
+            BASE_URL="${TARGET_URL%/}"
+          else
+            BASE_URL="${TARGET_URL}"
+          fi
+
+          BYPASS_URL="${BASE_URL}/?x-vercel-set-bypass-cookie=true&x-vercel-protection-bypass=${BYPASS_SECRET}"
+
+          echo "Testing preview URL: ${BASE_URL}/"
+          echo "PREVIEW_TEST_URL=${BASE_URL}/" >> $GITHUB_ENV
+          echo "PREVIEW_BYPASS_URL=${BYPASS_URL}" >> $GITHUB_ENV
+
+      - name: Verify preview is reachable
+        run: |
+          set -euo pipefail
+
+          echo "Bootstrapping bypass cookie via preview bypass URL"
+          bootstrap=$(curl -sS -L -c /tmp/vercel_cookies.txt -b /tmp/vercel_cookies.txt \
+            -o /tmp/bootstrap.html -w '%{url_effective} %{http_code}' "${PREVIEW_BYPASS_URL}")
+          bootstrap_url=$(echo "${bootstrap}" | awk '{print $1}')
+          bootstrap_code=$(echo "${bootstrap}" | awk '{print $2}')
+
+          if [[ "${bootstrap_url}" == https://vercel.com/* || "${bootstrap_url}" == *"/sso-api"* ]]; then
+            echo "Bypass bootstrap redirected to Vercel authentication: ${bootstrap_url}"
+            echo "Bypass token was not accepted. Verify Deployment Protection Automation Bypass in Vercel."
+            sed -n '1,120p' /tmp/bootstrap.html || true
+            exit 1
+          fi
+
+          if [[ "${bootstrap_code}" != "200" ]]; then
+            echo "Bypass bootstrap returned HTTP ${bootstrap_code}."
+            sed -n '1,120p' /tmp/bootstrap.html || true
+            exit 1
+          fi
+
+          echo "Checking preview access at: ${PREVIEW_TEST_URL}"
+          check=$(curl -sS -L -c /tmp/vercel_cookies.txt -b /tmp/vercel_cookies.txt \
+            -o preview.html -w '%{url_effective} %{http_code}' "${PREVIEW_TEST_URL}")
+          check_url=$(echo "${check}" | awk '{print $1}')
+          check_code=$(echo "${check}" | awk '{print $2}')
+
+          if [[ "${check_url}" == https://vercel.com/* || "${check_url}" == *"/sso-api"* ]]; then
+            echo "Preview check redirected to Vercel authentication: ${check_url}"
+            sed -n '1,120p' preview.html || true
+            exit 1
+          fi
+
+          if [[ "${check_code}" != "200" ]]; then
+            echo "Preview returned HTTP ${check_code}."
+            sed -n '1,120p' preview.html || true
+            exit 1
+          fi
+
+          if grep -Eqi 'vercel.*protect|deployment.*protect|access denied|sign in|security checkpoint' preview.html; then
+            echo "Preview still appears protected by Vercel/auth wall after bypass bootstrap."
+            sed -n '1,160p' preview.html || true
+            exit 1
+          fi
+
+          echo "Preview access check passed."
+
+      - name: Run E2E tests against Vercel Preview
+        env:
+          PLAYWRIGHT_BASE_URL: ${{ env.PREVIEW_BYPASS_URL }}
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
+        run: npm run test:e2e
+
+      - name: Upload Playwright artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-artifacts-${{ github.run_id }}
+          path: |
+            playwright-report
+            test-results
+          if-no-files-found: ignore

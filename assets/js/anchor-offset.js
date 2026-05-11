@@ -9,6 +9,7 @@
         return;
     }
 
+    // Keep anchors aligned exactly to the fixed header bottom edge.
     function measureOffset() {
         return Math.round(header.getBoundingClientRect().height);
     }
