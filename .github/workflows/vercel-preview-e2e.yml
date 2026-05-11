@@ -33,16 +33,43 @@ jobs:
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
 
+      - name: Show target preview URL
+        run: echo "Testing preview URL: ${{ github.event.deployment_status.environment_url || vars.PLAYWRIGHT_BASE_URL }}"
+
+      - name: Verify preview is reachable
+        env:
+          TARGET_URL: ${{ github.event.deployment_status.environment_url || vars.PLAYWRIGHT_BASE_URL }}
+        run: |
+          set -euo pipefail
+
+          echo "Checking preview access at: ${TARGET_URL}"
+          http_code=$(curl -sSL -o preview.html -w '%{http_code}' --max-redirs 5 "${TARGET_URL}")
+
+          if [[ "${http_code}" != "200" ]]; then
+            echo "Preview returned HTTP ${http_code}."
+            echo "Common causes: Vercel deployment protection, an auth wall, or the deployment is not ready yet."
+            echo "Response body preview:"
+            sed -n '1,120p' preview.html || true
+            exit 1
+          fi
+
+          if grep -Eqi 'vercel.*protect|deployment.*protect|access denied|sign in|security checkpoint' preview.html; then
+            echo "Preview appears to be protected by Vercel or an auth wall."
+            echo "Response body preview:"
+            sed -n '1,160p' preview.html || true
+            exit 1
+          fi
+
       - name: Run E2E tests against Vercel Preview
         env:
           PLAYWRIGHT_BASE_URL: ${{ github.event.deployment_status.environment_url || vars.PLAYWRIGHT_BASE_URL }}
         run: npm run test:e2e
 
-      - name: Upload Playwright report on failure
-        if: failure()
+      - name: Upload Playwright artifacts
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report
+          name: playwright-artifacts-${{ github.run_id }}
           path: |
             playwright-report
             test-results

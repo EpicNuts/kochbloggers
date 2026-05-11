@@ -6,13 +6,16 @@ const useRemoteBaseURL = Boolean(process.env.PLAYWRIGHT_BASE_URL);
 module.exports = defineConfig({
     testDir: './tests/e2e',
     timeout: 30_000,
+    reporter: [['list'], ['html', { open: 'never' }]],
     expect: {
         timeout: 10_000,
     },
     retries: process.env.CI ? 2 : 0,
     use: {
         baseURL,
-        trace: 'on-first-retry',
+        trace: 'retain-on-failure',
+        screenshot: 'only-on-failure',
+        video: 'retain-on-failure',
     },
     projects: [
         {
