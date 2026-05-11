@@ -116,7 +116,7 @@
                         <div class="recipe-image">
                             <img src="assets/images/carrot-cake/hero.jpg"
                                  alt="Moehrenkuchen"
-                                                                     onerror="this.src='assets/images/custard-tarts/custard-tarts.jpg'">
+                                   onerror="this.src='assets/images/custard-tarts/hero.jpg'">
                         </div>
                         <div class="recipe-content">
                             <h3>Moehrenkuchen</h3>
@@ -134,7 +134,7 @@
                 <a href="recipes/chicken-banana-curry.html" class="recipe-card-link" data-tags="abendessen,exotisch,familie,wuerzig">
                     <div class="recipe-card">
                         <div class="recipe-image">
-                            <img src="assets/images/chicken-banana-curry/1000143325.jpg" alt="Chicken-Banana-Curry">
+                            <img src="assets/images/chicken-banana-curry/hero.jpg" alt="Chicken-Banana-Curry">
                         </div>
                         <div class="recipe-content">
                             <h3>Chicken-Banana-Curry</h3>
@@ -152,7 +152,7 @@
                 <a href="recipes/custard-tarts.html" class="recipe-card-link" data-tags="backen,dessert,suess,kaffee">
                     <div class="recipe-card">
                         <div class="recipe-image">
-                            <img src="assets/images/custard-tarts/custard-tarts.jpg" alt="Custard Tarts">
+                            <img src="assets/images/custard-tarts/hero.jpg" alt="Custard Tarts">
                         </div>
                         <div class="recipe-content">
                             <h3>Custard Tarts</h3>
@@ -167,13 +167,13 @@
                     </div>
                 </a>
 
-                <div class="recipe-card coming-soon">
+                <div class="recipe-card coming-soon" data-tags="salat,proteinreich">
                     <div class="recipe-image">
-                        <img src="assets/images/beef-salat/20260306_180836.jpg" alt="Beef Salat Preview">
+                        <img src="assets/images/beef-salat/hero.jpg" alt="Beef Salat Preview">
                     </div>
                     <div class="recipe-content">
-                        <h3>Beef Salat (bald online)</h3>
-                        <span class="cook-time">⏱️ In Arbeit</span>
+                        <h3>Beef Salat</h3>
+                        <span class="cook-time">🏗️ In Arbeit</span>
                         <p>Rezeptseite folgt in Kuerze. Die Fotos sind schon da und der Feinschliff laeuft.</p>
                         <div class="recipe-tags" aria-label="Tags fuer Beef Salat Preview">
                             <span class="tag-chip">Salat</span>
@@ -182,13 +182,13 @@
                     </div>
                 </div>
 
-                <div class="recipe-card coming-soon">
+                <div class="recipe-card coming-soon" data-tags="abendessen,fisch">
                     <div class="recipe-image">
-                        <img src="assets/images/kedgeree-dylu/20260105_190723.jpg" alt="Kedgeree Preview">
+                        <img src="assets/images/kedgeree-dylu/hero.jpg" alt="Kedgeree Preview">
                     </div>
                     <div class="recipe-content">
-                        <h3>Kedgeree Dylu (bald online)</h3>
-                        <span class="cook-time">⏱️ In Arbeit</span>
+                        <h3>Kedgeree Dylu</h3>
+                        <span class="cook-time">🏗️ In Arbeit</span>
                         <p>Dein neues Gericht ist bereits als Preview sichtbar. Rezepttext und Schritte folgen.</p>
                         <div class="recipe-tags" aria-label="Tags fuer Kedgeree Preview">
                             <span class="tag-chip">Abendessen</span>
@@ -197,13 +197,13 @@
                     </div>
                 </div>
 
-                <div class="recipe-card coming-soon">
+                <div class="recipe-card coming-soon" data-tags="fisch,abendessen">
                     <div class="recipe-image">
-                        <img src="assets/images/lachs-burger/20260219_174621.jpg" alt="Lachs Burger Preview">
+                        <img src="assets/images/lachs-burger/hero.jpg" alt="Lachs Burger Preview">
                     </div>
                     <div class="recipe-content">
-                        <h3>Lachs Burger (bald online)</h3>
-                        <span class="cook-time">⏱️ In Arbeit</span>
+                        <h3>Lachs Burger</h3>
+                        <span class="cook-time">🏗️ In Arbeit</span>
                         <p>Schon als Foto-Preview verfuegbar. Die vollstaendige Rezeptseite kommt als naechstes.</p>
                         <div class="recipe-tags" aria-label="Tags fuer Lachs Burger Preview">
                             <span class="tag-chip">Burger</span>
@@ -218,7 +218,7 @@
                     </div>
                     <div class="recipe-content">
                         <h3>Mehr Rezepte kommen bald...</h3>
-                        <span class="cook-time">⏱️ Bald da</span>
+                        <span class="cook-time">🏗️ In Planung</span>
                         <p>Wir arbeiten bereits an neuen Rezepten fuer euch. Schaut bald wieder vorbei.</p>
                     </div>
                 </div>
@@ -228,9 +228,31 @@
 
     <footer id="contact">
         <div class="footer-content">
-            <h3>Kontakt</h3>
-            <p>Email: benjamonstyles@protonmail.com</p>
-            <p>&copy; 2025 kochbloggers. Alle Rechte vorbehalten.</p>
+            <div class="footer-top">
+                <h3>Kontakt</h3>
+                <p>Email: benjamonstyles@protonmail.com</p>
+                <p>&copy; 2025 kochbloggers. Alle Rechte vorbehalten.</p>
+            </div>
+            <div class="theme-nav-item-footer">
+                <button
+                    id="theme-toggle-footer"
+                    class="theme-trigger"
+                    type="button"
+                    aria-haspopup="menu"
+                    aria-expanded="false"
+                    aria-controls="theme-menu-footer"
+                >
+                    <span class="theme-trigger-icon" aria-hidden="true"></span>
+                    <span id="theme-current-footer" class="theme-current">Kuestenwind</span>
+                    <span class="theme-trigger-caret" aria-hidden="true">▾</span>
+                </button>
+                <div id="theme-menu-footer" class="theme-menu" role="menu" aria-label="Theme Auswahl">
+                    <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="kuestenwind">Kuestenwind</button>
+                    <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="herdfeuer">Herdfeuer</button>
+                    <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="nachtkueche">Nachtkueche</button>
+                    <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="marktmorgen">Marktmorgen</button>
+                </div>
+            </div>
         </div>
     </footer>
 

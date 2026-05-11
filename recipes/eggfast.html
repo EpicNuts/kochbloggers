@@ -74,7 +74,7 @@
             <div class="recipe-hero-image">
                 <img src="../assets/images/eggfast/hero.jpg" 
                      alt="Eggfast - fertiges Gericht" 
-                     onerror="this.src='../assets/images/custard-tarts/custard-tarts.jpg'">
+                     onerror="this.src='../assets/images/custard-tarts/hero.jpg'">
             </div>
         </div>
 
@@ -150,9 +150,31 @@
 
     <footer id="contact">
         <div class="footer-content">
-            <h3>Kontakt</h3>
-            <p>Email: benjamonstyles@protonmail.com</p>
-            <p>&copy; 2025 kochbloggers. Alle Rechte vorbehalten.</p>
+            <div class="footer-top">
+                <h3>Kontakt</h3>
+                <p>Email: benjamonstyles@protonmail.com</p>
+                <p>&copy; 2025 kochbloggers. Alle Rechte vorbehalten.</p>
+            </div>
+            <div class="theme-nav-item-footer">
+                <button
+                    id="theme-toggle-footer"
+                    class="theme-trigger"
+                    type="button"
+                    aria-haspopup="menu"
+                    aria-expanded="false"
+                    aria-controls="theme-menu-footer"
+                >
+                    <span class="theme-trigger-icon" aria-hidden="true"></span>
+                    <span id="theme-current-footer" class="theme-current">Kuestenwind</span>
+                    <span class="theme-trigger-caret" aria-hidden="true">▾</span>
+                </button>
+                <div id="theme-menu-footer" class="theme-menu" role="menu" aria-label="Theme Auswahl">
+                    <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="kuestenwind">Kuestenwind</button>
+                    <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="herdfeuer">Herdfeuer</button>
+                    <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="nachtkueche">Nachtkueche</button>
+                    <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="marktmorgen">Marktmorgen</button>
+                </div>
+            </div>
         </div>
     </footer>
 

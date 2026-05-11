@@ -5,7 +5,7 @@
 
     document.addEventListener("DOMContentLoaded", function () {
         var filterButtons = Array.from(document.querySelectorAll(".tag-filter"));
-        var recipeCards = Array.from(document.querySelectorAll(".recipe-card-link[data-tags]"));
+        var recipeCards = Array.from(document.querySelectorAll(".recipe-card-link[data-tags], .recipe-card[data-tags]"));
 
         if (!filterButtons.length || !recipeCards.length) {
             return;

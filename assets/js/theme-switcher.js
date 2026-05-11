@@ -39,70 +39,129 @@
 
     document.addEventListener("DOMContentLoaded", function () {
         var root = document.documentElement;
+        
+        // Setup theme switcher instance (nav)
         var toggle = document.getElementById("theme-toggle");
         var menu = document.getElementById("theme-menu");
         var current = document.getElementById("theme-current");
+        
+        // Setup theme switcher instance (footer)
+        var toggleFooter = document.getElementById("theme-toggle-footer");
+        var menuFooter = document.getElementById("theme-menu-footer");
+        var currentFooter = document.getElementById("theme-current-footer");
+        
+        // Get all theme option buttons
         var options = Array.prototype.slice.call(document.querySelectorAll(".theme-option"));
 
-        if (!toggle || !menu || !current || !options.length) {
+        // Check if at least one instance exists
+        if (!toggle && !toggleFooter) {
             return;
         }
 
         function setTheme(theme) {
             var nextTheme = applyTheme(theme);
-            current.textContent = themeNames[nextTheme];
-            toggle.setAttribute("aria-label", "Theme switcher, current theme " + themeNames[nextTheme]);
+            
+            // Update nav instance
+            if (current) {
+                current.textContent = themeNames[nextTheme];
+            }
+            if (toggle) {
+                toggle.setAttribute("aria-label", "Theme switcher, current theme " + themeNames[nextTheme]);
+            }
+            
+            // Update footer instance
+            if (currentFooter) {
+                currentFooter.textContent = themeNames[nextTheme];
+            }
+            if (toggleFooter) {
+                toggleFooter.setAttribute("aria-label", "Theme switcher, current theme " + themeNames[nextTheme]);
+            }
+            
+            // Update all option buttons
             options.forEach(function (option) {
                 var isActive = option.getAttribute("data-theme-value") === nextTheme;
                 option.classList.toggle("is-active", isActive);
                 option.setAttribute("aria-checked", isActive ? "true" : "false");
             });
+            
             persistTheme(nextTheme);
         }
 
-        function openMenu() {
-            menu.classList.add("is-open");
-            toggle.setAttribute("aria-expanded", "true");
+        function openMenu(toggleEl, menuEl) {
+            menuEl.classList.add("is-open");
+            toggleEl.setAttribute("aria-expanded", "true");
         }
 
-        function closeMenu() {
-            menu.classList.remove("is-open");
-            toggle.setAttribute("aria-expanded", "false");
+        function closeMenu(toggleEl, menuEl) {
+            menuEl.classList.remove("is-open");
+            toggleEl.setAttribute("aria-expanded", "false");
         }
 
-        function toggleMenu() {
-            if (menu.classList.contains("is-open")) {
-                closeMenu();
+        function toggleMenu(toggleEl, menuEl) {
+            if (menuEl.classList.contains("is-open")) {
+                closeMenu(toggleEl, menuEl);
             } else {
-                openMenu();
+                openMenu(toggleEl, menuEl);
             }
         }
 
         setTheme(getSavedTheme());
 
-        toggle.addEventListener("click", function (event) {
-            event.stopPropagation();
-            toggleMenu();
-        });
+        // Setup nav instance event listeners
+        if (toggle && menu) {
+            toggle.addEventListener("click", function (event) {
+                event.stopPropagation();
+                toggleMenu(toggle, menu);
+            });
 
-        menu.addEventListener("click", function (event) {
-            event.stopPropagation();
-        });
+            menu.addEventListener("click", function (event) {
+                event.stopPropagation();
+            });
+        }
 
+        // Setup footer instance event listeners
+        if (toggleFooter && menuFooter) {
+            toggleFooter.addEventListener("click", function (event) {
+                event.stopPropagation();
+                toggleMenu(toggleFooter, menuFooter);
+            });
+
+            menuFooter.addEventListener("click", function (event) {
+                event.stopPropagation();
+            });
+        }
+
+        // Setup option button click handlers
         options.forEach(function (option) {
             option.addEventListener("click", function () {
                 setTheme(option.getAttribute("data-theme-value"));
-                closeMenu();
+                // Close both menus
+                if (menu) {
+                    closeMenu(toggle, menu);
+                }
+                if (menuFooter) {
+                    closeMenu(toggleFooter, menuFooter);
+                }
             });
         });
 
         document.addEventListener("click", function () {
-            closeMenu();
+            if (menu) {
+                closeMenu(toggle, menu);
+            }
+            if (menuFooter) {
+                closeMenu(toggleFooter, menuFooter);
+            }
         });
 
         document.addEventListener("keydown", function (event) {
             if (event.key === "Escape") {
-                closeMenu();
+                if (menu) {
+                    closeMenu(toggle, menu);
+                }
+                if (menuFooter) {
+                    closeMenu(toggleFooter, menuFooter);
+                }
             }
         });
 
