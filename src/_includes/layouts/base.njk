@@ -10,6 +10,7 @@
     <link rel="apple-touch-icon" href="/logo.png">
     <link rel="stylesheet" href="/assets/css/styles.css?v={{ buildVersion }}">
     <script src="/assets/js/theme-switcher.js?v={{ buildVersion }}"></script>
+    <script src="/assets/js/anchor-offset.js?v={{ buildVersion }}" defer></script>
     {% if scripts %}
     {% for script in scripts %}
     <script src="{{ script }}{% if '?' in script %}&{% else %}?{% endif %}v={{ buildVersion }}" defer></script>

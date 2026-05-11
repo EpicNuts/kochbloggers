@@ -10,6 +10,7 @@
 :root,
 html[data-theme='kuestenwind'] {
     --header-offset: 80px;
+    --anchor-offset: 80px;
     --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --font-heading: 'Fraunces', Georgia, serif;
 
@@ -316,7 +317,7 @@ main {
 #home,
 #recipes,
 #contact {
-    scroll-margin-top: var(--header-offset);
+    scroll-margin-top: var(--anchor-offset);
 }
 
 .hero-content {
@@ -350,6 +351,7 @@ main {
 }
 
 .cta-button {
+    display: inline-block;
     background-color: var(--color-button-bg);
     color: var(--color-button-text);
     padding: 1rem 2rem;
@@ -357,6 +359,7 @@ main {
     border-radius: 5px;
     font-size: 1.1rem;
     font-weight: 700;
+    text-decoration: none;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -909,7 +912,7 @@ footer,
 /* Responsive design */
 @media (max-width: 768px) {
     html {
-        scroll-padding-top: 290px;
+        scroll-padding-top: var(--anchor-offset);
     }
 
     html[data-theme='kuestenwind'],
@@ -917,10 +920,12 @@ footer,
     html[data-theme='nachtkueche'],
     html[data-theme='marktmorgen'] {
         --header-offset: 180px;
+        --anchor-offset: 180px;
     }
 
     :root {
         --header-offset: 180px;
+        --anchor-offset: 180px;
     }
 
     .logo h1 {
