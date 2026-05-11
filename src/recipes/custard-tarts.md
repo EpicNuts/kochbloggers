@@ -27,15 +27,15 @@ Diese kleinen Tartes haben einen knusprigen Blätterteigboden und eine seidige V
 
 ## Zutaten 🛒
 
-- 1 Rolle Blätterteig (Kühlregal)
-- 250 ml Milch
-- 120 ml Sahne
-- 3 Eigelb
-- 60 g Zucker
-- 15 g Speisestärke
-- 1 TL Vanilleextrakt
-- 1 Prise Salz
-- Puderzucker zum Bestäuben (optional)
+1 Rolle Blätterteig (Kühlregal)  
+250 ml Milch  
+120 ml Sahne  
+3 Eigelb  
+60 g Zucker  
+15 g Speisestärke  
+1 TL Vanilleextrakt  
+1 Prise Salz  
+Puderzucker zum Bestäuben (optional)  
 
 ## Zubereitung 👨‍🍳
 

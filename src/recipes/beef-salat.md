@@ -29,23 +29,23 @@ Ein eleganter Salat mit zartem Rinderfilet, herzhaften gebratenen Champignons un
 
 ### Für den Salat
 
-- 400–450 g Rinderfilet
-- 1 Pack gemischter Blattsalat (Wildkräuter-Mischung)
-- 2 Möhren, grob geraspelt
-- 1 mittelgroße Zwiebel, in Ringe geschnitten
-- 200 g weiße Champignons, entstielt und in Scheiben
-- 2 EL Butter
-- 1 EL frische Petersilie, gehackt
-- 2 EL Öl zum Braten
-- Salz und Pfeffer
+400–450 g Rinderfilet  
+1 Pack gemischter Blattsalat (Wildkräuter-Mischung)  
+2 Möhren, grob geraspelt  
+1 mittelgroße Zwiebel, in Ringe geschnitten  
+200 g weiße Champignons, entstielt und in Scheiben  
+2 EL Butter  
+1 EL frische Petersilie, gehackt  
+2 EL Öl zum Braten  
+Salz und Pfeffer  
 
 ### Für das Dressing
 
-- 45 g Olivenöl
-- 25 g Senf (mittelscharf)
-- 40 g Balsamico (Aceto Balsamico)
-- 30 g Honig
-- Salz und Pfeffer nach Geschmack
+45 g Olivenöl  
+25 g Senf (mittelscharf)  
+40 g Balsamico (Aceto Balsamico)  
+30 g Honig  
+Salz und Pfeffer nach Geschmack  
 
 ## Zubereitung 👨‍🍳
 

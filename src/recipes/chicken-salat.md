@@ -30,27 +30,27 @@ Ein frischer und protein-reicher Salat mit saftigem Hähnchenfleisch - perfekt f
 
 ### Für den Salat
 
-- 2 Hähnchenbrustfilets (ca. 400 g)
-- 200 g gemischte Salatblätter
-- 1 Gurke
-- 200 g Cocktailtomaten
-- 1 rote Paprika
-- 1 Avocado
-- 50 g Pinienkerne
-- 100 g Feta-Käse
-- 2 EL Olivenöl (zum Braten)
-- Salz und Pfeffer
-- 1 TL Paprika (süß)
-- 1 TL Thymian (getrocknet)
+2 Hähnchenbrustfilets (ca. 400 g)  
+200 g gemischte Salatblätter  
+1 Gurke  
+200 g Cocktailtomaten  
+1 rote Paprika  
+1 Avocado  
+50 g Pinienkerne  
+100 g Feta-Käse  
+2 EL Olivenöl (zum Braten)  
+Salz und Pfeffer  
+1 TL Paprika (süß)  
+1 TL Thymian (getrocknet)  
 
 ### Für das Dressing
 
-- 3 EL Olivenöl
-- 2 EL Balsamico-Essig
-- 1 TL Honig
-- 1 TL Senf (mittelscharf)
-- 1 Knoblauchzehe (gepresst)
-- Salz und Pfeffer nach Geschmack
+3 EL Olivenöl  
+2 EL Balsamico-Essig  
+1 TL Honig  
+1 TL Senf (mittelscharf)  
+1 Knoblauchzehe (gepresst)  
+Salz und Pfeffer nach Geschmack  
 
 ## Zubereitung 👨‍🍳
 

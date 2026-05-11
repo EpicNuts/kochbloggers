@@ -28,21 +28,21 @@ Kedgeree ist ein herzhaftes Reisgericht mit Ursprung in der britisch-indischen K
 
 ## Zutaten 🛒
 
-- 2 Schellfischfilets (ca. 300 g), aufgetaut
-- 250 g Basmati-Reis
-- 3 Eier
-- 2 Möhren, fein gewürfelt
-- 1 Zwiebel, fein gehackt
-- 2 Knoblauchzehen, gepresst
-- 1 Dose Sonnenmais (150 g), abgetropft
-- 2 EL Butter
-- 1 EL Currypulver
-- 1 TL Kurkuma
-- 1 TL Paprika (edelsüß)
-- Salz, Pfeffer, Cayennepfeffer nach Geschmack
-- 1 EL Zucker (zum Abschmecken)
-- Saft von ½ Zitrone
-- Frische Petersilie zum Garnieren
+2 Schellfischfilets (ca. 300 g), aufgetaut  
+250 g Basmati-Reis  
+3 Eier  
+2 Möhren, fein gewürfelt  
+1 Zwiebel, fein gehackt  
+2 Knoblauchzehen, gepresst  
+1 Dose Sonnenmais (150 g), abgetropft  
+2 EL Butter  
+1 EL Currypulver  
+1 TL Kurkuma  
+1 TL Paprika (edelsüß)  
+Salz, Pfeffer, Cayennepfeffer nach Geschmack  
+1 EL Zucker (zum Abschmecken)  
+Saft von ½ Zitrone  
+Frische Petersilie zum Garnieren  
 
 ## Zubereitung 👨‍🍳
 

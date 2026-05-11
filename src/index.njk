@@ -26,6 +26,7 @@ scripts:
             <button type="button" class="tag-filter" data-filter="abendessen">Abendessen</button>
             <button type="button" class="tag-filter" data-filter="dessert">Dessert</button>
             <button type="button" class="tag-filter" data-filter="proteinreich">Proteinreich</button>
+            <span class="filter-selection-count" aria-live="polite" aria-atomic="true"></span>
         </div>
         <div class="recipes-grid">
             {% set sortedRecipes = collections.recipes | sort(false, false, 'data.order') %}
@@ -36,7 +37,7 @@ scripts:
                         <img src="/assets/images/{{ recipe.data.image }}/hero.jpg" alt="{{ recipe.data.title }}">
                     </div>
                     <div class="recipe-content">
-                        <h3>{{ recipe.data.title }}{% if recipe.data.emoji %} {{ recipe.data.emoji }}{% endif %}</h3>
+                        <h3>{{ recipe.data.title }}</h3>
                         <span class="cook-time">⏱️ {{ recipe.data.cookTime }}</span>
                         <p>{{ recipe.data.cardDescription }}</p>
                         <div class="recipe-tags" aria-label="Tags fuer {{ recipe.data.title }}">
@@ -55,7 +56,7 @@ scripts:
                 </div>
                 <div class="recipe-content">
                     <h3>Mehr Rezepte kommen bald...</h3>
-                    <span class="cook-time">🏗️ In Planung</span>
+                    <span class="cook-time">In Planung</span>
                     <p>Wir arbeiten bereits an neuen Rezepten für euch. Schaut bald wieder vorbei.</p>
                 </div>
             </div>

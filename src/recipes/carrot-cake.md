@@ -2,7 +2,7 @@
 title: Möhrenkuchen
 emoji: 🥕
 metaDescription: Saftiger Möhrenkuchen mit Frischkäse-Frosting - ein klassischer Kuchen mit Zimt, Orange und Ananas
-cookTime: 45 Min + 40–45 Min Backzeit
+cookTime: 45 Min
 servings: 12 Stücke
 difficulty: Einfach
 filterTags: backen,dessert,vegetarisch,kuchen
@@ -30,24 +30,24 @@ Ein saftiger Möhrenkuchen mit feinem Zimt-Aroma, frischer Orangenschale und fru
 
 ### Für den Kuchen
 
-- 3 Eier
-- 120 ml Pflanzenöl (½ Tasse)
-- 250 g Mehl (ca. 2 Tassen)
-- 200 g Zucker (ca. 1 Tasse)
-- 3 TL Backpulver
-- ½ TL Zimt
-- ca. 300 g geriebene Möhren (ca. 3 Tassen)
-- 60 g gehackte Walnüsse (optional)
-- 1 TL fein geriebene Orangenschale
-- 180 ml zerdrückte Ananas, gut abgetropft (¾ Tasse)
+3 Eier  
+120 ml Pflanzenöl (½ Tasse)  
+250 g Mehl (ca. 2 Tassen)  
+200 g Zucker (ca. 1 Tasse)  
+3 TL Backpulver  
+½ TL Zimt  
+ca. 300 g geriebene Möhren (ca. 3 Tassen)  
+60 g gehackte Walnüsse (optional)  
+1 TL fein geriebene Orangenschale  
+180 ml zerdrückte Ananas, gut abgetropft (¾ Tasse)  
 
 ### Für das Frischkäse-Frosting
 
-- 250 g Frischkäse
-- 80 g weiche Butter
-- 150 g Puderzucker
-- 1 TL Vanilleextrakt
-- 1–2 TL Zitronensaft
+250 g Frischkäse  
+80 g weiche Butter  
+150 g Puderzucker  
+1 TL Vanilleextrakt  
+1–2 TL Zitronensaft  
 
 ## Zubereitung 👨‍🍳
 

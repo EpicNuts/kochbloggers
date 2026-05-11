@@ -29,23 +29,23 @@ Das perfekte proteinreiche Frühstück für alle, die schnell und gesund in den 
 
 ## Zutaten 🛒
 
-- 4 frische Eier
-- 2 EL Butter oder Olivenöl
-- Salz und frisch gemahlener Pfeffer
-- 2 Scheiben Vollkornbrot (optional)
-- 1 Avocado (optional)
-- 1 Handvoll Babyspinat
-- 50 g geriebener Käse (Cheddar oder Gouda)
-- 1 TL Paprika (süß)
-- Schnittlauch oder Petersilie zum Garnieren
-- 1 kleine Tomate (optional)
+4 frische Eier  
+2 EL Butter oder Olivenöl  
+Salz und frisch gemahlener Pfeffer  
+2 Scheiben Vollkornbrot (optional)  
+1 Avocado (optional)  
+1 Handvoll Babyspinat  
+50 g geriebener Käse (Cheddar oder Gouda)  
+1 TL Paprika (süß)  
+Schnittlauch oder Petersilie zum Garnieren  
+1 kleine Tomate (optional)  
 
 ## Zubereitung 👨‍🍳
 
-1. **Vorbereitung:** Alle Zutaten bereitstellen. Schnittlauch fein hacken, Tomate in kleine Würfel schneiden.
-2. **Pfanne erhitzen:** Butter oder Olivenöl in einer beschichteten Pfanne bei mittlerer Hitze schmelzen.
-3. **Spinat hinzufügen:** Babyspinat in die Pfanne geben und kurz zusammenfallen lassen (1–2 Min).
-4. **Eier aufschlagen:** Eier direkt in die Pfanne aufschlagen oder vorher in einer Schüssel verquirlen.
-5. **Würzen:** Mit Salz, Pfeffer und Paprika würzen. Käse darüber streuen.
-6. **Stocken lassen:** Bei mittlerer Hitze stocken lassen (3–4 Min). Optional umrühren für Rührei-Style.
-7. **Servieren:** Mit Schnittlauch und Tomatenwürfeln garnieren. Optional mit Toast servieren.
+**Vorbereitung:** Alle Zutaten bereitstellen. Schnittlauch fein hacken, Tomate in kleine Würfel schneiden.
+**Pfanne erhitzen:** Butter oder Olivenöl in einer beschichteten Pfanne bei mittlerer Hitze schmelzen.
+**Spinat hinzufügen:** Babyspinat in die Pfanne geben und kurz zusammenfallen lassen (1–2 Min).
+**Eier aufschlagen:** Eier direkt in die Pfanne aufschlagen oder vorher in einer Schüssel verquirlen.
+**Würzen:** Mit Salz, Pfeffer und Paprika würzen. Käse darüber streuen.
+**Stocken lassen:** Bei mittlerer Hitze stocken lassen (3–4 Min). Optional umrühren für Rührei-Style.
+**Servieren:** Mit Schnittlauch und Tomatenwürfeln garnieren. Optional mit Toast servieren.

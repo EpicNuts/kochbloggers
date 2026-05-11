@@ -29,31 +29,31 @@ Dieser Lachsburger ist eine leichtere Alternative zum klassischen Fleischburger 
 
 ### Für die Lachs-Patties
 
-- 400 g Lachsfilet (ohne Haut), fein gehackt
-- 3 EL Semmelbrösel
-- 1 Ei
-- 2 Frühlingszwiebeln, fein gehackt
-- 1 EL frischer Dill, gehackt (oder 1 TL getrockneter)
-- 1 TL Senf
-- Saft von ½ Zitrone
-- Salz und Pfeffer
-- 1 EL Öl zum Braten
+400 g Lachsfilet (ohne Haut), fein gehackt  
+3 EL Semmelbrösel  
+1 Ei  
+2 Frühlingszwiebeln, fein gehackt  
+1 EL frischer Dill, gehackt (oder 1 TL getrockneter)  
+1 TL Senf  
+Saft von ½ Zitrone  
+Salz und Pfeffer  
+1 EL Öl zum Braten  
 
 ### Für die Dill-Sauce
 
-- 4 EL Mayonnaise
-- 1 TL frischer Dill, gehackt
-- 1 TL Zitronensaft
-- ½ TL Senf
-- Salz und Pfeffer
+4 EL Mayonnaise  
+1 TL frischer Dill, gehackt  
+1 TL Zitronensaft  
+½ TL Senf  
+Salz und Pfeffer  
 
 ### Zum Anrichten
 
-- 2 Burger-Buns
-- Einige Salatblätter
-- 1 Tomate, in Scheiben
-- ½ Gurke, in Scheiben
-- Rote Zwiebel, in Ringe (optional)
+2 Burger-Buns  
+Einige Salatblätter  
+1 Tomate, in Scheiben  
+½ Gurke, in Scheiben  
+Rote Zwiebel, in Ringe (optional)  
 
 ## Zubereitung 👨‍🍳
 

@@ -13,8 +13,8 @@ scripts:
 
         <div class="recipe-meta">
             <span class="cook-time">⏱️ Zubereitungszeit: {{ cookTime }}</span>
-            <span class="serving">👥 Portionen: {{ servings }}</span>
-            <span class="difficulty">📊 Schwierigkeit: {{ difficulty }}</span>
+            <span class="serving">Portionen: {{ servings }}</span>
+            <span class="difficulty">Schwierigkeit: {{ difficulty }}</span>
         </div>
 
         <div class="recipe-meta-tags" aria-label="Tags fuer {{ title }}">
@@ -35,7 +35,7 @@ scripts:
 
         {% if tips %}
         <div class="recipe-tips">
-            <h2>Tipps & Variationen 💡</h2>
+            <h2>Tipps & Variationen</h2>
             <ul>
             {% for tip in tips %}
                 <li>{{ tip | md | safe }}</li>

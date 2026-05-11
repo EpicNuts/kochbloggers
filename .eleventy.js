@@ -3,7 +3,6 @@ const md = new markdownIt({ html: true });
 
 module.exports = function (eleventyConfig) {
   // Passthrough copy static assets from project root into _site/
-  eleventyConfig.addPassthroughCopy({ "styles.css": "styles.css" });
   eleventyConfig.addPassthroughCopy({ "assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "logo.png": "logo.png" });
 

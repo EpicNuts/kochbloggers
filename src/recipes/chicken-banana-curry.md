@@ -27,18 +27,18 @@ Dieses Curry kombiniert zartes Hähnchen mit Kokosmilch, milder Curryscärfe und
 
 ## Zutaten 🛒
 
-- 500 g Hähnchenbrust
-- 1 Zwiebel
-- 2 Knoblauchzehen
-- 1 EL Ingwer, fein gehackt
-- 1 EL Currypulver
-- 1 TL Kurkuma
-- 400 ml Kokosmilch
-- 1 Banane, in Scheiben
-- 1 EL Limettensaft
-- 2 EL Öl
-- Salz und Pfeffer
-- Basmatireis als Beilage
+500 g Hähnchenbrust  
+1 Zwiebel  
+2 Knoblauchzehen  
+1 EL Ingwer, fein gehackt  
+1 EL Currypulver  
+1 TL Kurkuma  
+400 ml Kokosmilch  
+1 Banane, in Scheiben  
+1 EL Limettensaft  
+2 EL Öl  
+Salz und Pfeffer  
+Basmatireis als Beilage  
 
 ## Zubereitung 👨‍🍳
 
