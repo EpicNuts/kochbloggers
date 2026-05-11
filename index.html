@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="assets/js/theme-switcher.js"></script>
     <script src="assets/js/recipe-card-parallax.js" defer></script>
+    <script src="assets/js/recipe-filter.js" defer></script>
 </head>
 <body>
     <header>
@@ -63,8 +64,18 @@
 
         <section id="recipes" class="recipes-section">
             <h2>Unsere Rezepte</h2>
+            <div class="recipe-filters" aria-label="Rezepte filtern">
+                <button type="button" class="tag-filter is-active" data-filter="alle">Alle</button>
+                <button type="button" class="tag-filter" data-filter="schnell">Schnell</button>
+                <button type="button" class="tag-filter" data-filter="fruehstueck">Fruehstueck</button>
+                <button type="button" class="tag-filter" data-filter="salat">Salat</button>
+                <button type="button" class="tag-filter" data-filter="backen">Backen</button>
+                <button type="button" class="tag-filter" data-filter="abendessen">Abendessen</button>
+                <button type="button" class="tag-filter" data-filter="dessert">Dessert</button>
+                <button type="button" class="tag-filter" data-filter="proteinreich">Proteinreich</button>
+            </div>
             <div class="recipes-grid">
-                <a href="recipes/eggfast.html" class="recipe-card-link">
+                <a href="recipes/eggfast.html" class="recipe-card-link" data-tags="fruehstueck,schnell,proteinreich,vegetarisch">
                     <div class="recipe-card">
                         <div class="recipe-image">
                             <img src="assets/images/eggfast/hero.jpg" alt="Eggfast">
@@ -73,11 +84,16 @@
                             <h3>Eggfast</h3>
                             <span class="cook-time">⏱️ 15 Min</span>
                             <p>Ein proteinreiches und schnelles Frühstück mit Eiern - perfekt für einen energievollen Start in den Tag.</p>
+                            <div class="recipe-tags" aria-label="Tags fuer Eggfast">
+                                <span class="tag-chip">Fruehstueck</span>
+                                <span class="tag-chip">Schnell</span>
+                                <span class="tag-chip">Proteinreich</span>
+                            </div>
                         </div>
                     </div>
                 </a>
                 
-                <a href="recipes/chicken-salat.html" class="recipe-card-link">
+                <a href="recipes/chicken-salat.html" class="recipe-card-link" data-tags="salat,schnell,proteinreich,mittagessen,low-carb">
                     <div class="recipe-card">
                         <div class="recipe-image">
                             <img src="assets/images/chicken-salat/hero.jpg" alt="Chicken Salat">
@@ -86,28 +102,119 @@
                             <h3>Chicken Salat</h3>
                             <span class="cook-time">⏱️ 20 Min</span>
                             <p>Frischer und protein-reicher Salat mit saftigem Hähnchen - perfekt für eine gesunde Mahlzeit.</p>
+                            <div class="recipe-tags" aria-label="Tags fuer Chicken Salat">
+                                <span class="tag-chip">Salat</span>
+                                <span class="tag-chip">Schnell</span>
+                                <span class="tag-chip">Proteinreich</span>
+                            </div>
                         </div>
                     </div>
                 </a>
                 
-                <a href="recipes/carrot-cake.html" class="recipe-card-link">
+                <a href="recipes/carrot-cake.html" class="recipe-card-link" data-tags="backen,dessert,vegetarisch,kuchen">
                     <div class="recipe-card">
                         <div class="recipe-image">
                             <img src="assets/images/carrot-cake/hero.jpg"
                                  alt="Moehrenkuchen"
-                                   onerror="this.src='assets/images/custard-tarts.jpg'">
+                                                                     onerror="this.src='assets/images/custard-tarts/custard-tarts.jpg'">
                         </div>
                         <div class="recipe-content">
                             <h3>Moehrenkuchen</h3>
                             <span class="cook-time">⏱️ 45 Min</span>
                             <p>Saftiger Kuchen mit Moehren, Zimt und Frischkaese-Frosting - perfekt fuer Kaffeepause und Besuch.</p>
+                            <div class="recipe-tags" aria-label="Tags fuer Moehrenkuchen">
+                                <span class="tag-chip">Backen</span>
+                                <span class="tag-chip">Dessert</span>
+                                <span class="tag-chip">Vegetarisch</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="recipes/chicken-banana-curry.html" class="recipe-card-link" data-tags="abendessen,exotisch,familie,wuerzig">
+                    <div class="recipe-card">
+                        <div class="recipe-image">
+                            <img src="assets/images/chicken-banana-curry/1000143325.jpg" alt="Chicken-Banana-Curry">
+                        </div>
+                        <div class="recipe-content">
+                            <h3>Chicken-Banana-Curry</h3>
+                            <span class="cook-time">⏱️ 35 Min</span>
+                            <p>Cremiges Curry mit Haehnchen, Banane und Kokosmilch - eine suess-wuerzige Kombination fuer den Abend.</p>
+                            <div class="recipe-tags" aria-label="Tags fuer Chicken-Banana-Curry">
+                                <span class="tag-chip">Abendessen</span>
+                                <span class="tag-chip">Exotisch</span>
+                                <span class="tag-chip">Familie</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="recipes/custard-tarts.html" class="recipe-card-link" data-tags="backen,dessert,suess,kaffee">
+                    <div class="recipe-card">
+                        <div class="recipe-image">
+                            <img src="assets/images/custard-tarts/custard-tarts.jpg" alt="Custard Tarts">
+                        </div>
+                        <div class="recipe-content">
+                            <h3>Custard Tarts</h3>
+                            <span class="cook-time">⏱️ 40 Min</span>
+                            <p>Blaettrige Tartelettes mit Vanillecreme und karamellisierter Oberflaeche - ideal zu Kaffee oder Tee.</p>
+                            <div class="recipe-tags" aria-label="Tags fuer Custard Tarts">
+                                <span class="tag-chip">Dessert</span>
+                                <span class="tag-chip">Backen</span>
+                                <span class="tag-chip">Suess</span>
+                            </div>
                         </div>
                     </div>
                 </a>
 
                 <div class="recipe-card coming-soon">
                     <div class="recipe-image">
-                        <img src="assets/images/chicken-banana-curry/1000143325.jpg" alt="Mehr Rezepte kommen bald">
+                        <img src="assets/images/beef-salat/20260306_180836.jpg" alt="Beef Salat Preview">
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Beef Salat (bald online)</h3>
+                        <span class="cook-time">⏱️ In Arbeit</span>
+                        <p>Rezeptseite folgt in Kuerze. Die Fotos sind schon da und der Feinschliff laeuft.</p>
+                        <div class="recipe-tags" aria-label="Tags fuer Beef Salat Preview">
+                            <span class="tag-chip">Salat</span>
+                            <span class="tag-chip">Proteinreich</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-card coming-soon">
+                    <div class="recipe-image">
+                        <img src="assets/images/kedgeree-dylu/20260105_190723.jpg" alt="Kedgeree Preview">
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Kedgeree Dylu (bald online)</h3>
+                        <span class="cook-time">⏱️ In Arbeit</span>
+                        <p>Dein neues Gericht ist bereits als Preview sichtbar. Rezepttext und Schritte folgen.</p>
+                        <div class="recipe-tags" aria-label="Tags fuer Kedgeree Preview">
+                            <span class="tag-chip">Abendessen</span>
+                            <span class="tag-chip">Fisch</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-card coming-soon">
+                    <div class="recipe-image">
+                        <img src="assets/images/lachs-burger/20260219_174621.jpg" alt="Lachs Burger Preview">
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Lachs Burger (bald online)</h3>
+                        <span class="cook-time">⏱️ In Arbeit</span>
+                        <p>Schon als Foto-Preview verfuegbar. Die vollstaendige Rezeptseite kommt als naechstes.</p>
+                        <div class="recipe-tags" aria-label="Tags fuer Lachs Burger Preview">
+                            <span class="tag-chip">Burger</span>
+                            <span class="tag-chip">Fisch</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-card coming-soon">
+                    <div class="recipe-image">
+                        <img src="assets/images/coming-soon.jpg" alt="Mehr Rezepte kommen bald">
                     </div>
                     <div class="recipe-content">
                         <h3>Mehr Rezepte kommen bald...</h3>
