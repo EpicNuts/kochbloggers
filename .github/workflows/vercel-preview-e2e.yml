@@ -1,8 +1,8 @@
 name: Vercel Preview E2E
 
 on:
-  deployment_status:
-  workflow_dispatch:
+  deployment_status: {}
+  workflow_dispatch: {}
 
 jobs:
   e2e-preview:
@@ -34,13 +34,21 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Show target preview URL
-        run: echo "Testing preview URL: ${{ github.event.deployment_status.environment_url || vars.PLAYWRIGHT_BASE_URL }}"
+        env:
+          PREVIEW_URL: ${{ github.event.deployment_status.environment_url }}
+          FALLBACK_URL: ${{ vars.PLAYWRIGHT_BASE_URL }}
+        run: |
+          TARGET_URL="${PREVIEW_URL:-$FALLBACK_URL}"
+          echo "Testing preview URL: ${TARGET_URL}"
 
       - name: Verify preview is reachable
         env:
-          TARGET_URL: ${{ github.event.deployment_status.environment_url || vars.PLAYWRIGHT_BASE_URL }}
+          PREVIEW_URL: ${{ github.event.deployment_status.environment_url }}
+          FALLBACK_URL: ${{ vars.PLAYWRIGHT_BASE_URL }}
         run: |
           set -euo pipefail
+
+          TARGET_URL="${PREVIEW_URL:-$FALLBACK_URL}"
 
           echo "Checking preview access at: ${TARGET_URL}"
           http_code=$(curl -sSL -o preview.html -w '%{http_code}' --max-redirs 5 "${TARGET_URL}")
@@ -62,8 +70,10 @@ jobs:
 
       - name: Run E2E tests against Vercel Preview
         env:
-          PLAYWRIGHT_BASE_URL: ${{ github.event.deployment_status.environment_url || vars.PLAYWRIGHT_BASE_URL }}
-        run: npm run test:e2e
+          PREVIEW_URL: ${{ github.event.deployment_status.environment_url }}
+          FALLBACK_URL: ${{ vars.PLAYWRIGHT_BASE_URL }}
+        run: |
+          PLAYWRIGHT_BASE_URL="${PREVIEW_URL:-$FALLBACK_URL}" npm run test:e2e
 
       - name: Upload Playwright artifacts
         if: always()
