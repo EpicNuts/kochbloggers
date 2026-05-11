@@ -6,6 +6,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "logo.png": "logo.png" });
 
+  // Cache-busting token so each deployment serves fresh CSS/JS files.
+  eleventyConfig.addGlobalData(
+    "buildVersion",
+    process.env.VERCEL_GIT_COMMIT_SHA || String(Date.now())
+  );
+
   // Filter: render inline markdown (used for tips strings in frontmatter)
   eleventyConfig.addFilter("md", (value) => md.renderInline(String(value ?? "")));
 

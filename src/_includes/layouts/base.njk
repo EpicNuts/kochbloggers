@@ -8,11 +8,11 @@
     <link rel="icon" type="image/png" href="/logo.png">
     <link rel="shortcut icon" type="image/png" href="/logo.png">
     <link rel="apple-touch-icon" href="/logo.png">
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <script src="/assets/js/theme-switcher.js"></script>
+    <link rel="stylesheet" href="/assets/css/styles.css?v={{ buildVersion }}">
+    <script src="/assets/js/theme-switcher.js?v={{ buildVersion }}"></script>
     {% if scripts %}
     {% for script in scripts %}
-    <script src="{{ script }}" defer></script>
+    <script src="{{ script }}{% if '?' in script %}&{% else %}?{% endif %}v={{ buildVersion }}" defer></script>
     {% endfor %}
     {% endif %}
 </head>
