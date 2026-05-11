@@ -2,6 +2,13 @@ const { defineConfig, devices } = require('@playwright/test');
 
 const baseURL = process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:4173';
 const useRemoteBaseURL = Boolean(process.env.PLAYWRIGHT_BASE_URL);
+const bypassSecret = process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
+const bypassHeaders = bypassSecret
+    ? {
+        'x-vercel-protection-bypass': bypassSecret,
+        'x-vercel-set-bypass-cookie': 'true',
+    }
+    : undefined;
 
 module.exports = defineConfig({
     testDir: './tests/e2e',
@@ -16,6 +23,7 @@ module.exports = defineConfig({
         trace: 'retain-on-failure',
         screenshot: 'only-on-failure',
         video: 'retain-on-failure',
+        extraHTTPHeaders: bypassHeaders,
     },
     projects: [
         {

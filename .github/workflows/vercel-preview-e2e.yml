@@ -37,23 +37,29 @@ jobs:
         env:
           PREVIEW_URL: ${{ github.event.deployment_status.environment_url }}
           FALLBACK_URL: ${{ vars.PLAYWRIGHT_BASE_URL }}
-          BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
         run: |
           TARGET_URL="${PREVIEW_URL:-$FALLBACK_URL}"
-          if [[ -n "${BYPASS_SECRET}" ]]; then
-            TARGET_URL="${TARGET_URL}?x-vercel-set-bypass-cookie=true&x-vercel-protection-bypass=${BYPASS_SECRET}"
-          fi
-          echo "Testing preview URL: ${TARGET_URL%\?*}"  # Print without secret
+          echo "Testing preview URL: ${TARGET_URL}"
           echo "PREVIEW_TEST_URL=${TARGET_URL}" >> $GITHUB_ENV
 
       - name: Verify preview is reachable
+        env:
+          BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
         run: |
           set -euo pipefail
 
           TARGET_URL="${PREVIEW_TEST_URL}"
 
-          echo "Checking preview access at: ${TARGET_URL%\?*}"  # Print without secret
-          http_code=$(curl -sSL -c /tmp/cookies.txt -b /tmp/cookies.txt -o preview.html -w '%{http_code}' --max-redirs 10 "${TARGET_URL}")
+          if [[ -z "${BYPASS_SECRET}" ]]; then
+            echo "Missing GitHub secret VERCEL_AUTOMATION_BYPASS_SECRET."
+            exit 1
+          fi
+
+          echo "Checking preview access at: ${TARGET_URL}"
+          http_code=$(curl -sSL -o preview.html -w '%{http_code}' --max-redirs 10 \
+            -H "x-vercel-protection-bypass: ${BYPASS_SECRET}" \
+            -H "x-vercel-set-bypass-cookie: true" \
+            "${TARGET_URL}")
 
           if [[ "${http_code}" != "200" ]]; then
             echo "Preview returned HTTP ${http_code}."
@@ -73,6 +79,7 @@ jobs:
       - name: Run E2E tests against Vercel Preview
         env:
           PLAYWRIGHT_BASE_URL: ${{ env.PREVIEW_TEST_URL }}
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
         run: npm run test:e2e
 
       - name: Upload Playwright artifacts
