@@ -1,0 +1,64 @@
+---
+layout: base
+pageTitle: kochbloggers - Leckere Rezepte & Kochideen
+metaDescription: Entdecke leckere Rezepte und Kochideen bei kochbloggers - von einfachen Alltagsgerichten bis zu besonderen Leckerbissen
+scripts:
+  - /assets/js/recipe-card-parallax.js
+  - /assets/js/recipe-filter.js
+---
+<main>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Willkommen bei kochbloggers 🍳</h2>
+            <p>Entdecke leckere Rezepte, einfache Kochideen und kulinarische Inspirationen. Von schnellen Alltagsgerichten bis zu besonderen Leckerbissen.</p>
+            <button class="cta-button" onclick="location.href='#recipes'">Rezepte entdecken</button>
+        </div>
+    </section>
+
+    <section id="recipes" class="recipes-section">
+        <h2>Unsere Rezepte</h2>
+        <div class="recipe-filters" aria-label="Rezepte filtern">
+            <button type="button" class="tag-filter is-active" data-filter="alle">Alle</button>
+            <button type="button" class="tag-filter" data-filter="schnell">Schnell</button>
+            <button type="button" class="tag-filter" data-filter="fruehstueck">Fruehstueck</button>
+            <button type="button" class="tag-filter" data-filter="salat">Salat</button>
+            <button type="button" class="tag-filter" data-filter="backen">Backen</button>
+            <button type="button" class="tag-filter" data-filter="abendessen">Abendessen</button>
+            <button type="button" class="tag-filter" data-filter="dessert">Dessert</button>
+            <button type="button" class="tag-filter" data-filter="proteinreich">Proteinreich</button>
+        </div>
+        <div class="recipes-grid">
+            {% set sortedRecipes = collections.recipes | sort(false, false, 'data.order') %}
+            {% for recipe in sortedRecipes %}
+            <a href="{{ recipe.url }}" class="recipe-card-link" data-tags="{{ recipe.data.filterTags }}">
+                <div class="recipe-card">
+                    <div class="recipe-image">
+                        <img src="/assets/images/{{ recipe.data.image }}/hero.jpg" alt="{{ recipe.data.title }}">
+                    </div>
+                    <div class="recipe-content">
+                        <h3>{{ recipe.data.title }}{% if recipe.data.emoji %} {{ recipe.data.emoji }}{% endif %}</h3>
+                        <span class="cook-time">⏱️ {{ recipe.data.cookTime }}</span>
+                        <p>{{ recipe.data.cardDescription }}</p>
+                        <div class="recipe-tags" aria-label="Tags fuer {{ recipe.data.title }}">
+                            {% for chip in recipe.data.tagChips %}
+                            <span class="tag-chip">{{ chip }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+
+            <div class="recipe-card coming-soon">
+                <div class="recipe-image">
+                    <img src="/assets/images/coming-soon.jpg" alt="Mehr Rezepte kommen bald">
+                </div>
+                <div class="recipe-content">
+                    <h3>Mehr Rezepte kommen bald...</h3>
+                    <span class="cook-time">🏗️ In Planung</span>
+                    <p>Wir arbeiten bereits an neuen Rezepten für euch. Schaut bald wieder vorbei.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

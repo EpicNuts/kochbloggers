@@ -795,23 +795,23 @@ footer {
     font-family: var(--font-heading);
 }
 
-.recipe-description p,
+.recipe-page .recipe-content p,
 .recipe-page .recipe-content li {
     margin-bottom: 0.8rem;
     line-height: 1.7;
 }
 
-.recipe-ingredients ul,
-.recipe-instructions ol,
+.recipe-page .recipe-content ul,
+.recipe-page .recipe-content ol,
 .recipe-tips ul {
     margin-left: 1.5rem;
 }
 
-.recipe-instructions ol li {
+.recipe-page .recipe-content ol li {
     margin-bottom: 1.5rem;
 }
 
-.recipe-instructions strong {
+.recipe-page .recipe-content strong {
     color: var(--color-accent);
 }
 

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if pageTitle %}{{ pageTitle }}{% else %}{{ title }} - kochbloggers{% endif %}</title>
+    <meta name="description" content="{{ metaDescription }}">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="shortcut icon" type="image/png" href="/logo.png">
+    <link rel="apple-touch-icon" href="/logo.png">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/assets/js/theme-switcher.js"></script>
+    {% if scripts %}
+    {% for script in scripts %}
+    <script src="{{ script }}" defer></script>
+    {% endfor %}
+    {% endif %}
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/logo.png" alt="Kochbloggers Logo" class="logo-img">
+                <h1><a href="/">kochbloggers</a></h1>
+            </div>
+            <div class="nav-actions">
+                <ul class="nav-links">
+                    <li><a href="/#home">Start</a></li>
+                    <li class="nav-separator" aria-hidden="true">|</li>
+                    <li><a href="/#recipes">Rezepte</a></li>
+                    <li class="nav-separator" aria-hidden="true">|</li>
+                    <li><a href="#contact">Kontakt</a></li>
+                    <li class="nav-separator" aria-hidden="true">|</li>
+                    <li class="theme-nav-item">
+                        <button
+                            id="theme-toggle"
+                            class="theme-trigger"
+                            type="button"
+                            aria-haspopup="menu"
+                            aria-expanded="false"
+                            aria-controls="theme-menu"
+                        >
+                            <span class="theme-trigger-icon" aria-hidden="true"></span>
+                            <span id="theme-current" class="theme-current">Kuestenwind</span>
+                            <span class="theme-trigger-caret" aria-hidden="true">▾</span>
+                        </button>
+                        <div id="theme-menu" class="theme-menu" role="menu" aria-label="Theme Auswahl">
+                            <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="kuestenwind">Kuestenwind</button>
+                            <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="herdfeuer">Herdfeuer</button>
+                            <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="nachtkueche">Nachtkueche</button>
+                            <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="marktmorgen">Marktmorgen</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    {{ content | safe }}
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-top">
+                <h3>Kontakt</h3>
+                <p>Email: benjamonstyles@protonmail.com</p>
+                <p>&copy; 2025 kochbloggers. Alle Rechte vorbehalten.</p>
+            </div>
+            <div class="theme-nav-item-footer">
+                <button
+                    id="theme-toggle-footer"
+                    class="theme-trigger"
+                    type="button"
+                    aria-haspopup="menu"
+                    aria-expanded="false"
+                    aria-controls="theme-menu-footer"
+                >
+                    <span class="theme-trigger-icon" aria-hidden="true"></span>
+                    <span id="theme-current-footer" class="theme-current">Kuestenwind</span>
+                    <span class="theme-trigger-caret" aria-hidden="true">▾</span>
+                </button>
+                <div id="theme-menu-footer" class="theme-menu" role="menu" aria-label="Theme Auswahl">
+                    <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="kuestenwind">Kuestenwind</button>
+                    <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="herdfeuer">Herdfeuer</button>
+                    <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="nachtkueche">Nachtkueche</button>
+                    <button class="theme-option" type="button" role="menuitemradio" aria-checked="false" data-theme-value="marktmorgen">Marktmorgen</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

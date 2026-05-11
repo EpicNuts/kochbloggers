@@ -1,0 +1,51 @@
+---
+layout: base
+scripts:
+  - /assets/js/recipe-scroll-parallax.js
+---
+<main class="recipe-page">
+    <div class="recipe-header">
+        <div class="breadcrumb">
+            <a href="/">Start</a> → <a href="/#recipes">Rezepte</a> → <span>{{ title }}</span>
+        </div>
+
+        <h1>{{ title }}{% if emoji %} {{ emoji }}{% endif %}</h1>
+
+        <div class="recipe-meta">
+            <span class="cook-time">⏱️ Zubereitungszeit: {{ cookTime }}</span>
+            <span class="serving">👥 Portionen: {{ servings }}</span>
+            <span class="difficulty">📊 Schwierigkeit: {{ difficulty }}</span>
+        </div>
+
+        <div class="recipe-meta-tags" aria-label="Tags fuer {{ title }}">
+            {% for chip in tagChips %}
+            <span class="tag-chip">{{ chip }}</span>
+            {% endfor %}
+        </div>
+
+        <div class="recipe-hero-image">
+            <img src="/assets/images/{{ image }}/hero.jpg"
+                 alt="{{ title }} - fertiges Gericht"
+                 onerror="this.src='/assets/images/custard-tarts/hero.jpg'">
+        </div>
+    </div>
+
+    <div class="recipe-content">
+        {{ content | safe }}
+
+        {% if tips %}
+        <div class="recipe-tips">
+            <h2>Tipps & Variationen 💡</h2>
+            <ul>
+            {% for tip in tips %}
+                <li>{{ tip | md | safe }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="recipe-navigation">
+        <a href="/#recipes" class="back-button">← Zurück zu allen Rezepten</a>
+    </div>
+</main>
