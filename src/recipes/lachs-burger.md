@@ -27,39 +27,39 @@ Dieser Lachsburger ist eine leichtere Alternative zum klassischen Fleischburger 
 
 ## Zutaten 🛒
 
-### Für die Lachs-Patties
+### Für den Burger
 
-400 g Lachsfilet (ohne Haut), fein gehackt  
-3 EL Semmelbrösel  
-1 Ei  
-2 Frühlingszwiebeln, fein gehackt  
-1 EL frischer Dill, gehackt (oder 1 TL getrockneter)  
-1 TL Senf  
-Saft von ½ Zitrone  
-Salz und Pfeffer  
-1 EL Öl zum Braten  
+2 Brioche-Buns (ohne Sesam)  
+Salattrio  
+2 Lachsfilet (TK/ohne Haut)  
+Gurkenscheiben (Salatgurke, geschält)  
+½ rote Zwiebel  
+evtl. Coleslaw, frischen Mozzarella und Sprossen  
 
-### Für die Dill-Sauce
+### Für die Burgersoße
 
-4 EL Mayonnaise  
-1 TL frischer Dill, gehackt  
-1 TL Zitronensaft  
-½ TL Senf  
-Salz und Pfeffer  
+ca. 100ml (Expresso) Mayonnaise  
+1TL Gemüsemeerrettich  
+1 ½ TL Senf (mittelscharf)  
+1 ½ TL Honig (klar)  
 
-### Zum Anrichten
+### Allg.
 
-2 Burger-Buns  
-Einige Salatblätter  
-1 Tomate, in Scheiben  
-½ Gurke, in Scheiben  
-Rote Zwiebel, in Ringe (optional)  
+etw. Zitrone / Rapsöl / (Kräuter)Salz / Pfeffer  
 
 ## Zubereitung 👨‍🍳
 
-1. **Sauce vorbereiten:** Alle Zutaten für die Dill-Sauce verrühren und in den Kühlschrank stellen.
-2. **Patties formen:** Lachsfilet fein hacken (nicht zu fein - etwas Textur ist gut). Mit Semmelbröseln, Ei, Frühlingszwiebeln, Dill, Senf, Zitronensaft, Salz und Pfeffer vermengen. Zu zwei Patties formen.
-3. **Braten:** Öl in einer Pfanne bei mittlerer Hitze erhitzen. Patties ca. 4 Minuten pro Seite braten, bis sie goldbraun und durchgegart sind.
-4. **Buns rösten:** Burger-Buns aufschneiden und in derselben Pfanne kurz bei mittlerer Hitze rösten.
-5. **Zusammenbauen:** Untere Bun-Hälfte mit Dill-Sauce bestreichen. Salatblätter, Tomatenscheiben und Gurkenscheiben darauflegen. Lachs-Patty daraufsetzen, mit weiterer Sauce beträufeln und den oberen Bun aufsetzen.
-6. **Servieren:** Sofort servieren, am besten mit Pommes oder einem frischen Salat.
+TK-Lachsfilet auftauen.  
+Salat waschen, trocknen und Blätter abzupfen.  
+Zwiebel in feine Scheiben schneiden.  
+Buns vorsichtig toasten. 
+evtl Mozzarella in Scheiben schneiden, Sprossen waschen.  
+Soße anrühren  
+  → alles (inkl. evtl. etwas Coleslaw) zum Belegen bereitstellen.  
+Lachsfilet abtropfen, mit etw. Rapsöl und (Kräuter)Salz einreiben  
+  → für 3min bei 180°C in den (2min bei 200°C vorgeheizten) AirFryer geben
+dann checken, mit Zitrone beträufeln, pfeffern und für weitere 2min bei 200°C fryen.  
+
+Buns oben und unten mit Soße bestreichen und dann nach Belieben belegen.  
+
+**\**NomNom*\***
