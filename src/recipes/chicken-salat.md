@@ -5,20 +5,19 @@ metaDescription: Frischer und protein-reicher Chicken Salat - perfekt für eine 
 cookTime: 20 Min
 servings: 2 Portionen
 difficulty: Einfach
-filterTags: salat,schnell,proteinreich,mittagessen,low-carb
+filterTags: salat,schnell,proteinreich,yummy
 tagChips:
   - Salat
   - Schnell
   - Proteinreich
-  - Low-Carb
+  - Yummy
 image: chicken-salat
-cardDescription: Frischer und protein-reicher Salat mit saftigem Hähnchen - perfekt für eine gesunde Mahlzeit.
+cardDescription: Frischer und yummy Salat mit saftigem Hähnchen - perfekt für eine gesunde Mahlzeit.
 order: 2
 tips:
   - "**Hähnchen-Test:** Das Hähnchen ist gar, wenn der Fleischsaft klar austritt"
-  - "**Salat-Variationen:** Probiere Rucola, Spinat oder andere Blattsalate"
+  - "**Salat-Variationen:** Probiere Rucola, Baby-Spinat oder andere Blattsalate"
   - "**Vorbereitung:** Hähnchen kann am Vortag gekocht und kalt verwendet werden"
-  - "**Extra-Protein:** Füge hartgekochte Eier oder Kichererbsen hinzu"
   - "**Dressing-Tipp:** Dressing immer erst kurz vor dem Servieren hinzugeben"
 ---
 
@@ -30,34 +29,41 @@ Ein frischer und protein-reicher Salat mit saftigem Hähnchenfleisch - perfekt f
 
 ### Für den Salat
 
-2 Hähnchenbrustfilets (ca. 400 g)  
-200 g gemischte Salatblätter  
-1 Gurke  
-200 g Cocktailtomaten  
-1 rote Paprika  
-1 Avocado  
-50 g Pinienkerne  
-100 g Feta-Käse  
-2 EL Olivenöl (zum Braten)  
-Salz und Pfeffer  
-1 TL Paprika (süß)  
-1 TL Thymian (getrocknet)  
+400g Hühnerbrustfilet (oder Innenfilet)  
+1 Pckg. gemischten Blattsalat   
+300 – 400g Champignons (braun)  
+1 Pckg. Tortellini oder Capelletti (nach Belieben)  
+1 große Möhre (ca. 150g)  
+1 rote Zwiebel  
+evtl. Mozzarella  
+etw. Butter  
 
 ### Für das Dressing
 
-3 EL Olivenöl  
-2 EL Balsamico-Essig  
-1 TL Honig  
-1 TL Senf (mittelscharf)  
-1 Knoblauchzehe (gepresst)  
-Salz und Pfeffer nach Geschmack  
+ca. 200ml Rapsöl  
+ca. 2 gehäufte TL Senf (mittelscharf)  
+ca. 100ml Balsamico-Essig (dunkel)  
+ca. 1 EL Honig (klar)  
+
+### Allg.
+
+feines (Meer)salz und schwarzen, körnigen Pfeffer  
+nach Belieben Kräutersalz und gefr. Petersilie  
 
 ## Zubereitung 👨‍🍳
 
-1. **Hähnchen vorbereiten:** Hähnchenbrustfilets mit Salz, Pfeffer, Paprika und Thymian würzen.
-2. **Hähnchen braten:** Olivenöl in einer Pfanne erhitzen und die Hähnchenbrust von beiden Seiten goldbraun anbraten (ca. 6–8 Min pro Seite). Anschließend ruhen lassen und in Streifen schneiden.
-3. **Gemüse vorbereiten:** Gurke und Paprika in mundgerechte Stücke schneiden, Cocktailtomaten halbieren, Avocado in Scheiben schneiden.
-4. **Pinienkerne rösten:** Pinienkerne in einer trockenen Pfanne ohne Fett goldbraun rösten (ca. 2–3 Min).
-5. **Dressing zubereiten:** Alle Dressing-Zutaten in einem kleinen Gefäß mit einem Schneebesen gut verrühren.
-6. **Salat zusammenstellen:** Salatblätter auf Tellern verteilen, Gemüse darauf arrangieren, Hähnchenstreifen hinzugeben.
-7. **Finale:** Feta-Käse und geröstete Pinienkerne über den Salat streuen, mit Dressing beträufeln und servieren.
+**Salat** waschen und trocken schleudern.  
+Möhre waschen, schälen, grob teilen und in den elektr. Zerkleinerer geben → blend.  
+Zwiebel schälen und halbieren. 1 ½ für den Salat in Streifen schneiden, Rest grob zerkleinern für die Pilze.  
+**Champis trocken (!) putzen**, Stiele entfernen und in Scheiben schneiden – ruhig direkt in die Pfanne.  
+Evtl. Mozzarella in kleine Stücke schneiden.  
+
+**Dressing zubereiten:** Öl, Senf, Essig, Honig und Salz/Pfeffer in eine Schüssel geben und cremig rühren – abschmecken (kräftig, denn in den Salat gemischt wird es abgemildert).  
+
+**Tortellinis (o.ä.)** nach Packungsanleitung in reichl. Salzwasser zubereiten, abgießen und mit etwas Dressing beträufeln.  
+Huhn in Stücke schneiden, mit Öl und (Kräuter)Salz einreiben und in den (für 2min bei 200°C vorgeheizten) AirFryer geben → je nach größe der Stücke bei 180°C für 3-4min ‘fryen’ → checken und mit Pfeffer würzen → bei 200°C für 1 – 2min fryen.  
+Währendessen die Pfanne mit den Pilzen auf höchster Stufe (ohne Öl!) erhitzen bis sie anfangen zu ‘schwitzen’ (Wasser austritt) → Salzen und ordentlich Butter hinzufügen → alles bei (weiterhin) starker Hitze rühren und weiter braten lassen → nach ca. 2min Hitze reduzieren, Zwiebeln hinzufügen und unterrühren → mit Pfeffer würzen und nach belieben gefrorene Petersilie hinzufügen, Herd ausmachen.  
+
+**Salat in eine große Schüssel geben** und mit etw. Dressing beträufeln – mischen.  
+Zerkleinerte Möhre und Zwiebeln (+ evtl. Mozzarella) dazugeben, ordentlich Dressing drübergeben – mischen.  
+Schichtweise auf einen tiefen Teller/eine Essschüssel mit den restl. Zutaten anrichten/schichten und servieren.  
